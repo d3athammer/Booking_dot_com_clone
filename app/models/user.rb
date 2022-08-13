@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :properties
+  has_many :wishlists
+  has_many :wishlisted_properties, through: :wishlist, source: :property
 end
