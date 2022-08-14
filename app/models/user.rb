@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :properties
   has_many :wishlists
+  has_many :reservations
+  has_many :reviews, through: :reservations
   has_many :wishlisted_properties, through: :wishlists, source: :property
+  has_many :reserved_properties, through: :reservations, source: :property
 end
