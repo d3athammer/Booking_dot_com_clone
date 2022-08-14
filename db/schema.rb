@@ -64,6 +64,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_14_090015) do
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "price_per_night"
+    t.integer "total_sum"
+    t.bigint "user_id", null: false
+    t.bigint "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_reservations_on_property_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
     t.integer "rating"
@@ -98,6 +111,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_14_090015) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "properties", "users"
+  add_foreign_key "reservations", "properties"
+  add_foreign_key "reservations", "users"
   add_foreign_key "wishlists", "properties"
   add_foreign_key "wishlists", "users"
 end
