@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>BookingDotComClone</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +12,36 @@
   </head>
 
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon pe-5">
+      <div class="container">
+        <div class="w-100">
+          <div class="row align-items-center">
+              <div class="col-3">
+                <%= link_to "#", class: "navbar-brand" do %>
+                  <%= image_tag "booking.png", alt: "booking.com logo" %>
+                <% end %>
+              </div>
+              <div class="col-9">
+                <div id="navbarSupportedContent">
+                  <ul class="navbar-nav justify-content-end">
+                      <li class="nav-item active">
+                        <a class="btn btn-flat" href="#">List your property</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="btn btn-reverse" href="#">Register</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="btn btn-reverse" href="#">Sign in</a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
     <%= yield %>
   </body>
    <p class="notice"><%= notice %></p>

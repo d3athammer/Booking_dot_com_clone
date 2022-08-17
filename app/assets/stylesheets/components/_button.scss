@@ -1,0 +1,33 @@
+.btn {
+  font-weight: 500 !important;
+  font-size: small;
+}
+
+.btn-flat {
+  color: white;
+  padding: 4px 12px;
+  margin-left: 4px;
+  border-radius: 2px;
+  background: #003B95;
+  transition: background 0.3s ease;
+  border: 1px solid white
+}
+
+.btn-flat:hover {
+  background: #1F4E8F;
+  color: white;
+}
+
+.btn-reverse {
+  color: #1F4E8F;
+  padding: 4px 12px;
+  margin-left: 4px;
+  border-radius: 2px;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+.btn-reverse:hover {
+  background: #F0F7FB;
+  color: #1F4E8F;
+}
